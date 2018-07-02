@@ -5,7 +5,7 @@ const OtherArticle = props => {
         <div className="small-6 medium-3 columns other-article">
             <a href="#">
                 <img src={props.src} alt={props.alt} />
-                <p>Single Orcs in Indianapolis</p>
+                <p>{props.name}</p>
             </a>  
         </div>
     );
