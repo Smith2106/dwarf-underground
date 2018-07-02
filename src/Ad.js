@@ -16,6 +16,6 @@ const Ad = () => {
                     </div>
                 </aside>
     );
-}
+};
 
 export default Ad;

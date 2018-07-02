@@ -38,6 +38,6 @@ const Article = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Article;
