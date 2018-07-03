@@ -5,7 +5,7 @@ const Comment = props => {
     return (
         <li className="comment">
             <span className="comment-username">
-                <i className="fa fa-user"></i>{comment.username}
+                <i className="fa fa-user"></i> {comment.username}
                 <span className="vote upvote" onClick={(e) => props.handleVote(e)}><i className="fa fa-arrow-up" data-modify={comment.content}></i></span>
                 <span className="score"> {comment.score}</span>
             </span>
