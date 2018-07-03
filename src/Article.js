@@ -43,7 +43,6 @@ class Article extends Component {
         const newList = [...this.state.commentList];
         const comment = newList.find(comment => comment.content === e.target.dataset.modify);
         classes.includes('up') ? comment.score++: comment.score--;
-        console.log(comment.score);
     
         this.setState({
             commentList: newList,
