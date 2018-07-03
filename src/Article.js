@@ -48,6 +48,8 @@ class Article extends Component {
         this.setState({
             commentList: newList,
         });
+
+        localStorage.setItem('commentList', JSON.stringify(this.state.commentList));
     }
 
     render() {
