@@ -329,4 +329,13 @@ button {
   color: rgb(187, 4, 4);
 }
 
+.score {
+  float: right;
+  position: relative;
+  top: 1.6rem;
+  left: 0.75rem;
+}
+
+
+
 

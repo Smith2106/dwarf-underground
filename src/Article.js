@@ -24,6 +24,7 @@ class Article extends Component {
         newComments.push({
             username: e.target.username.value,
             content: e.target.content.value,
+            score: 0,
         });
 
         localStorage.setItem('commentList', JSON.stringify(newComments));
@@ -36,6 +37,19 @@ class Article extends Component {
         e.target.username.focus();
     }
 
+    handleVote(e) {
+        e.preventDefault();
+        const classes = e.target.classList.value;
+        const newList = [...this.state.commentList];
+        const comment = newList.find(comment => comment.content === e.target.dataset.modify);
+        classes.includes('up') ? comment.score++: comment.score--;
+        console.log(comment.score);
+    
+        this.setState({
+            commentList: newList,
+        });
+    }
+
     render() {
         return (
             <div className="large-8 medium-12 columns article">
@@ -44,7 +58,7 @@ class Article extends Component {
                 <ArticleText />
                 <ArticleLinks onClick={() => this.onClick()}/>
                 <br/>
-                {this.state.displayComments ? <ArticleComments onSubmit={(e) => this.onSubmit(e)} commentList={this.state.commentList} /> : ''}
+                {this.state.displayComments ? <ArticleComments onSubmit={(e) => this.onSubmit(e)} commentList={this.state.commentList} handleVote={(e) => this.handleVote(e)} /> : ''}
             </div>
         );
     }
