@@ -3,7 +3,7 @@ import React from 'react';
 const CommentInput = props => {
     return (
         <form onSubmit={(e) => props.onSubmit(e)}>
-            <input type="text" name="username" placeholder="Enter a username." />
+            <input type="text" name="username" placeholder="Enter a username." autoFocus />
             <textarea id="advanced" name="advanced"
                 rows="3" cols="33" maxLength="200"
                 wrap="hard"

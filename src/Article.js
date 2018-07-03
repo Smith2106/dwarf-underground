@@ -20,8 +20,6 @@ class Article extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        console.log(e.target.username);
-        console.log(e.target.content);
         const newComments = [...this.state.commentList]
         newComments.push({
             username: e.target.username.value,
@@ -33,6 +31,9 @@ class Article extends Component {
         this.setState({
             commentList: newComments,
         });
+
+        e.target.reset();
+        e.target.username.focus();
     }
 
     render() {
