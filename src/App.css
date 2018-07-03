@@ -273,6 +273,7 @@ button {
 .comment-btn {
   display: flex;
   width: 100%;
+  cursor: pointer;
 }
 
 .comment {
@@ -300,3 +301,32 @@ button {
   padding: 0.8rem;
   padding-left: 2rem;
 }
+
+.vote {
+  float: right;
+  transition: 0.2s;
+}
+
+.vote:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+  transition: 0.2s;
+}
+
+.upvote {
+  color: green;
+}
+
+.downvote {
+  color: red;
+}
+
+.upvote:hover {
+  color: rgb(1, 94, 1);
+}
+
+.downvote:hover {
+  color: rgb(187, 4, 4);
+}
+
+
