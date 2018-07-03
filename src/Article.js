@@ -8,11 +8,31 @@ import ArticleComments from './ArticleComments';
 class Article extends Component {
     constructor(props) {
         super(props);
-        this.state = { displayComments: false };
+        this.state = {
+            displayComments: false,
+            commentList: JSON.parse(localStorage.getItem('commentList')) || [],
+        };
     }
 
     onClick() {
         this.setState({ displayComments: !this.state.displayComments });
+    }
+
+    onSubmit(e) {
+        e.preventDefault();
+        console.log(e.target.username);
+        console.log(e.target.content);
+        const newComments = [...this.state.commentList]
+        newComments.push({
+            username: e.target.username.value,
+            content: e.target.content.value,
+        });
+
+        localStorage.setItem('commentList', JSON.stringify(newComments));
+
+        this.setState({
+            commentList: newComments,
+        });
     }
 
     render() {
@@ -23,7 +43,7 @@ class Article extends Component {
                 <ArticleText />
                 <ArticleLinks onClick={() => this.onClick()}/>
                 <br/>
-                {this.state.displayComments ? <ArticleComments /> : ''}
+                {this.state.displayComments ? <ArticleComments onSubmit={(e) => this.onSubmit(e)} commentList={this.state.commentList} /> : ''}
             </div>
         );
     }

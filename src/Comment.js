@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Comment = () => {
+const Comment = props => {
     return (
-        <li class="comment">
-            <span class="comment-username"></span>
-            <span class="comment-content"></span>
+        <li className="comment">
+            <span className="comment-username">{props.username}</span>
+            <span className="comment-content">{props.content}</span>
         </li>
     );
 };

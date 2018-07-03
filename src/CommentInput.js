@@ -1,19 +1,21 @@
 import React from 'react';
 
-const CommentInput = () => {
+const CommentInput = props => {
     return (
-        <form>
+        <form onSubmit={(e) => props.onSubmit(e)}>
             <input type="text" name="username" placeholder="Enter a username." />
             <textarea id="advanced" name="advanced"
-                rows="3" cols="33" maxlength="200"
+                rows="3" cols="33" maxLength="200"
                 wrap="hard"
                 placeholder="Leave a comment."
-                name="Comment">
+                name="content">
             </textarea>
-            <button type="submit" className="article-link">
-                <i className="fa fa-comments-o"></i>
-                <span className="article-link-text">Comment</span>
-            </button>
+            <div className="comment-btn">
+                <button type="submit" className="article-link">
+                    <i className="fa fa-comments-o"></i>
+                    <span className="article-link-text">Comment</span>
+                </button>
+            </div>
         </form>
     );
 };
