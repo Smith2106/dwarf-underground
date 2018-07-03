@@ -255,3 +255,17 @@ footer h6 {
   padding-right: 1.5em;
   display: inline-block;
 }
+
+button span {
+  top: 0.5rem;
+  right: 0.5rem;
+  position: relative;
+}
+
+button i {
+  float: left;
+}
+
+button {
+  float: right;
+}
